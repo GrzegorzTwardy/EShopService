@@ -1,21 +1,31 @@
 using EShop.Application;
+using EShop.Domain;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace EShop.Application.Tests;
 
 public class UnitTest1
 {
     //
+    //[Fact]
+    //public void ValidateCard_CheckCardTooShort_ReturnFalse()
+    //{
+    //    var creditCardService = new CreditCardService();
+
+    //    var result = creditCardService.ValidateCard("1234");
+
+    //    bool expected = false;
+
+    //    Assert.Equal(expected, result);
+    //}
+
     [Fact]
-    public void ValidateCard_CheckCardTooShort_ReturnFalse()
+    public void ValidateCard_CheckCardTooShort_ThrowsCardNumberTooShortException()
     {
         var creditCardService = new CreditCardService();
 
-        var result = creditCardService.ValidateCard("1234");
-
-        bool expected = false;
-
-        Assert.Equal(expected, result);
+        Assert.Throws<CardNumberTooShortException>(() => creditCardService.ValidateCard("1234"));
     }
+
 
     [Fact]
     public void ValidateCard_CheckCardAllDigits_ReturnFalse()
