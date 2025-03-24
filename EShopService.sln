@@ -6,13 +6,19 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopService", "EShopService\EShopService.csproj", "{CB9C7BAD-F0E0-4801-B72C-85478C1F36F5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShop.Application", "EShop.Application\EShop.Application.csproj", "{03FE6719-1852-4608-91EE-54229645F5D0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A91DC2B7-20D3-4A52-A420-391A917A74F4} = {A91DC2B7-20D3-4A52-A420-391A917A74F4}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShop.Application.Tests", "EShop.Application.Tests\EShop.Application.Tests.csproj", "{0C7EA357-4576-4C06-8384-CDA57B73956F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{A91DC2B7-20D3-4A52-A420-391A917A74F4} = {A91DC2B7-20D3-4A52-A420-391A917A74F4}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshop.Domain", "Eshop.Domain\Eshop.Domain.csproj", "{A91DC2B7-20D3-4A52-A420-391A917A74F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShop.Domain", "Eshop.Domain\EShop.Domain.csproj", "{A91DC2B7-20D3-4A52-A420-391A917A74F4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CB9C7BAD-F0E0-4801-B72C-85478C1F36F5} = {CB9C7BAD-F0E0-4801-B72C-85478C1F36F5}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshop.Domain.Tests", "Eshop.Domain.Tests\Eshop.Domain.Tests.csproj", "{600A20F5-51F9-47BE-97E0-095FFA333FF0}"
 	ProjectSection(ProjectDependencies) = postProject

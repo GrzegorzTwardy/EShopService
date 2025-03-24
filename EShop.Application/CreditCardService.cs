@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using EShop.Domain.Exceptions;
 
 namespace EShop.Application
 {
@@ -6,12 +7,16 @@ namespace EShop.Application
     {
         public bool ValidateCard(string cardNumber)
         {
-            if (cardNumber.Length > 19 || cardNumber.Length < 13)
-                return false;
-            cardNumber = cardNumber.Replace(" ", "");
-            cardNumber = cardNumber.Replace("-", "");
+            if (cardNumber.Length < 13)
+                throw new CardNumberTooShortException();
+
+            if (cardNumber.Length > 19)
+                throw new CardNumberTooLongException();
+
+            cardNumber = cardNumber.Replace(" ", "").Replace("-", "");
+
             if (!cardNumber.All(char.IsDigit))
-                return false;
+                throw new CardNumberIsInvalidException();
 
             int sum = 0;
             bool alternate = false;
@@ -57,7 +62,7 @@ namespace EShop.Application
 
             if (Regex.IsMatch(cardNumber, @"^(50|5[6-9]|6\d)\d{10,17}$"))
                 return "Maestro";
-            return "";
+            throw new CardNumberIsInvalidException("Unsupported card provider.");
         }
     }
 }

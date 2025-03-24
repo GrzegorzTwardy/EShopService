@@ -1,6 +1,3 @@
-﻿namespace Eshop.Domain;
+﻿namespace EShop.Domain.Enums;
 
-public class CreditCardProviders
-{
-    enum CreditCardProvider { Visa, Mastercard, AmericanExpress };
-}
+public enum CreditCardProvider { Visa, Mastercard, AmericanExpress };
