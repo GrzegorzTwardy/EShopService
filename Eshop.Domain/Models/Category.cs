@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EShopService.Models
+namespace EShop.Domain.Models
 {
     public class Category : BaseModel
     {
