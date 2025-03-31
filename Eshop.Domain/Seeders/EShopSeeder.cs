@@ -11,14 +11,13 @@ public class EShopSeeder(DataContext context) : IEShopSeeder
 {
     public async Task Seed()
     {
-        // Sprawdzenie czy tabela jest pusta
         if (!context.Products.Any())
         {
             var products = new List<Product>
         {
-            new Product { Name = "Dan" },
-            new Product { Name = "Diogo"},
-            new Product { Name = "Dorota" }
+            new Product { Name = "p1" },
+            new Product { Name = "p2"},
+            new Product { Name = "p3" }
         };
 
             context.Products.AddRange(products);
